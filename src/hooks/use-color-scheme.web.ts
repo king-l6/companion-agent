@@ -1,21 +1,9 @@
-import { useEffect, useState } from 'react';
 import { useColorScheme as useRNColorScheme } from 'react-native';
 
 /**
- * To support static rendering, this value needs to be re-calculated on the client side for web
+ * 本 demo 已固定暗色主题，这里直接透传系统值即可。
+ * 之前为静态渲染做的水合占位会在 effect 里同步 setState，触发 lint 报错，也不再需要。
  */
 export function useColorScheme() {
-  const [hasHydrated, setHasHydrated] = useState(false);
-
-  useEffect(() => {
-    setHasHydrated(true);
-  }, []);
-
-  const colorScheme = useRNColorScheme();
-
-  if (hasHydrated) {
-    return colorScheme;
-  }
-
-  return 'light';
+  return useRNColorScheme();
 }

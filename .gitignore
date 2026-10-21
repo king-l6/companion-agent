@@ -32,6 +32,12 @@ yarn-error.*
 
 # local env files
 .env*.local
+.env.proxy
+
+# local voice service
+server/voice/.venv/
+server/voice/models/
+server/voice/data/
 
 # typescript
 *.tsbuildinfo
