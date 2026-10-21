@@ -38,11 +38,10 @@ yarn-error.*
 server/voice/.venv/
 server/voice/models/
 server/voice/data/
+__pycache__/
 
 # typescript
 *.tsbuildinfo
-
-example
 
 # generated native folders
 /ios

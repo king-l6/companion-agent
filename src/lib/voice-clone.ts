@@ -59,10 +59,6 @@ async function readError(response: Response, fallback: string) {
   return `${fallback}（HTTP ${response.status}）`;
 }
 
-export function clipUrl(speaker: Pick<ClonedSpeaker, 'clipPath'>) {
-  return `${VOICE_SERVICE_URL}${speaker.clipPath}`;
-}
-
 export function ttsUrl(text: string, speakerId: string, numSteps?: number) {
   const params = new URLSearchParams({ text, speaker: speakerId });
   if (numSteps) params.set('num_steps', String(numSteps));
